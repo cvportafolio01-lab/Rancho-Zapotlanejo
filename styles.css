@@ -1,0 +1,513 @@
+/* ========================================
+   ERICK ROMO INMOBILIARIA - DORADO LUXURY
+======================================== */
+:root {
+    /* Colores LOGO DORADO/NEGRO */
+    --dorado-primario: #D4AF37;
+    --dorado-oscuro: #B8962E;
+    --dorado-claro: #E8D5A3;
+    --negro-primario: #1A1A1A;
+    --negro-secundario: #2D2D2D;
+    --gris-elegante: #4A4A4A;
+    --gris-claro: #F5F5F5;
+    --crema-suave: #FAF7F0;
+    --blanco-puro: #FFFFFF;
+    
+    /* Sombras y efectos */
+    --shadow-dorado: rgba(212, 175, 55, 0.3);
+    --shadow-negro: rgba(26, 26, 26, 0.15);
+    --border-dorado: rgba(212, 175, 55, 0.2);
+    
+    /* Transiciones elegantes */
+    --transition-suave: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --radius-elegante: 20px;
+}
+
+/* Reset y Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, var(--crema-suave) 0%, var(--gris-claro) 100%);
+    color: var(--negro-primario);
+    line-height: 1.7;
+    padding-top: 80px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--negro-primario);
+}
+
+/* ==========================
+   NAVBAR COMPACTO & LUXURY
+========================== */
+/* ==========================
+   NAVBAR TRANSPARENTE & COMPACTO
+========================== */
+/* ==========================
+   NAVBAR SEMI-TRANSPARENTE & ELEGANTE
+========================== */
+.navbar-custom {
+    background: rgba(0, 0, 0, 0.4); /* negro semi-transparente */
+    backdrop-filter: blur(10px); /* suaviza la imagen de fondo detrás */
+    border-bottom: none;
+    padding: 0.5rem 0; /* más compacto */
+    font-family: 'Playfair Display', serif;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.navbar-custom.scrolled {
+    background: rgba(0, 0, 0, 0.85); /* más oscuro al hacer scroll */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
+    border-radius: 8px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+}
+
+.brand-text {
+    color: #ffd700; /* dorado brillante */
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.brand-subtitle {
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* siempre visible */
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffd700 !important; /* dorado al pasar */
+    background: rgba(255,215,0,0.1); /* fondo dorado muy suave */
+    transform: translateY(-1px);
+}
+
+/* HERO ELEGANTE */
+.hero-section { min-height: 100vh; position: relative; }
+.hero-slide {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(45,45,45,0.7) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--blanco-puro);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-badge {
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-oscuro));
+    color: var(--negro-primario);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 1px;
+    box-shadow: 0 12px 35px var(--shadow-dorado);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--blanco-puro), var(--dorado-claro));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 6px 25px rgba(0,0,0,0.6);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-price {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-oscuro));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2.5rem;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hero-features span {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* BOTONES LUXURY */
+.btn-elegante {
+    padding: 1.3rem 3rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-suave);
+}
+
+.btn-dorado {
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-oscuro));
+    color: var(--negro-primario);
+    box-shadow: 0 15px 40px var(--shadow-dorado);
+}
+
+.btn-dorado:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 25px 50px var(--shadow-dorado);
+    color: var(--negro-primario);
+}
+
+/* SECCIONES */
+.section-padding { padding: 8rem 0; }
+.section-header { text-align: center; margin-bottom: 5rem; }
+.section-badge {
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-oscuro));
+    color: var(--negro-primario);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px var(--shadow-dorado);
+}
+
+
+/* Separación entre secciones */
+.property-section {
+    padding-top: 80px;  /* espacio arriba */
+    padding-bottom: 80px; /* espacio abajo, opcional */
+}
+
+
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-oscuro));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: var(--gris-elegante);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* Hover elegante para lista de propiedades */
+.hover-list li {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hover-list li i {
+    color: var(--dorado-primario);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hover-list li:hover {
+    background: rgba(255, 215, 0, 0.1); /* fondo suave dorado */
+    border-radius: 8px;
+    transform: translateX(5px);
+}
+
+.hover-list li:hover i {
+    color: var(--dorado-oscuro);
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+/* CARDS LUXURY */
+.card-luxury {
+    background: var(--blanco-puro);
+    border-radius: var(--radius-elegante);
+    padding: 3rem 2.5rem;
+    box-shadow: 0 25px 70px var(--shadow-negro);
+    border: 1px solid var(--border-dorado);
+    transition: all var(--transition-suave);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.card-luxury::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--dorado-primario), transparent);
+    transform: scaleX(0);
+    transition: transform 0.7s ease;
+}
+
+.card-luxury:hover::before { transform: scaleX(1); }
+.card-luxury:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 90px var(--shadow-dorado);
+}
+
+.icono-dorado {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-oscuro));
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--negro-primario);
+    font-size: 2.2rem;
+    margin: 0 auto 2rem;
+    box-shadow: 0 15px 40px var(--shadow-dorado);
+    transition: all var(--transition-suave);
+}
+
+.card-luxury:hover .icono-dorado {
+    transform: scale(1.15) rotate(360deg);
+}
+
+.luxury-list {
+    list-style: none;
+}
+
+.luxury-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.luxury-list li:last-child { border-bottom: none; }
+
+/* GALERÍA */
+.gallery-section { background: var(--gris-claro); }
+.property-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-elegante);
+    box-shadow: 0 15px 45px var(--shadow-negro);
+    transition: all var(--transition-suave);
+    height: 100%;
+}
+
+.property-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 70px var(--shadow-dorado);
+}
+
+.property-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.property-card:hover .property-img { transform: scale(1.1); }
+
+.property-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: var(--blanco-puro);
+    padding: 2rem;
+}
+
+.property-price {
+    background: var(--dorado-primario);
+    color: var(--negro-primario);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 700;
+}
+
+/* LOCATION */
+.location-section { background: var(--blanco-puro); }
+.map-container {
+    border-radius: var(--radius-elegante);
+    overflow: hidden;
+    box-shadow: 0 25px 70px var(--shadow-negro);
+}
+
+#ubicacion {
+    padding-top: 100px; /* más espacio desde la sección anterior */
+    padding-bottom: 80px;
+}
+
+
+
+
+/* CTA */
+.cta-luxury {
+    background: linear-gradient(135deg, var(--negro-primario) 0%, var(--negro-secundario) 100%);
+    padding: 7rem 0;
+    text-align: center;
+    color: var(--blanco-puro);
+}
+
+.cta-luxury h2 {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-claro));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* FOOTER */
+.footer {
+    background: var(--negro-primario);
+    color: var(--blanco-puro);
+    padding: 4rem 0 2rem;
+}
+
+.footer-logo {
+    height: 60px;
+    filter: brightness(0) invert(1);
+}
+
+.footer h5 {
+    color: var(--dorado-primario);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--blanco-puro);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: all var(--transition-suave);
+}
+
+.footer-links a:hover {
+    color: var(--dorado-primario);
+    transform: translateX(5px);
+}
+
+/* WHATSAPP LUXURY */
+.whatsapp-luxury {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(135deg, var(--dorado-primario), var(--dorado-oscuro));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: var(--negro-primario);
+    box-shadow: 0 20px 50px var(--shadow-dorado);
+    z-index: 999;
+    transition: all var(--transition-suave);
+    animation: pulse-dorado 2s infinite;
+}
+
+.whatsapp-luxury:hover { transform: scale(1.2); }
+
+@keyframes pulse-dorado {
+    0% { box-shadow: 0 0 0 0 var(--shadow-dorado); }
+    70% { box-shadow: 0 0 0 25px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* CAROUSEL */
+.carousel-control-prev, .carousel-control-next {
+    width: 70px;
+    height: 70px;
+    background: rgba(212, 175, 55, 0.9);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all var(--transition-suave);
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background: var(--dorado-primario);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.8rem; }
+    .hero-price { font-size: 2.5rem; }
+    .section-title { font-size: 2.2rem; }
+    .whatsapp-luxury { width: 65px; height: 65px; font-size: 1.8rem; }
+    .property-img { height: 220px; }
+}
