@@ -511,3 +511,53 @@ h1, h2, h3, h4, h5, h6 {
     .whatsapp-luxury { width: 65px; height: 65px; font-size: 1.8rem; }
     .property-img { height: 220px; }
 }
+/* ========================================
+   EFECTOS PARA MÓVIL (TOUCH)
+======================================== */
+@media (hover: none) and (pointer: coarse) {
+
+    /* CARDS (como hover al tocar) */
+    .card-luxury:active,
+    .card-luxury:focus {
+        transform: translateY(-15px);
+        box-shadow: 0 40px 90px var(--shadow-dorado);
+    }
+
+    .card-luxury:active::before {
+        transform: scaleX(1);
+    }
+
+    /* IMÁGENES DE PROPIEDADES */
+    .property-card:active {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 70px var(--shadow-dorado);
+    }
+
+    .property-card:active .property-img {
+        transform: scale(1.08);
+    }
+
+    /* LISTA (características) */
+    .hover-list li:active {
+        background: rgba(255, 215, 0, 0.15);
+        border-radius: 8px;
+        transform: translateX(5px);
+    }
+
+    .hover-list li:active i {
+        transform: scale(1.2);
+        color: var(--dorado-oscuro);
+    }
+
+    /* BOTONES */
+    .btn-dorado:active {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px var(--shadow-dorado);
+    }
+}
+
+.card-luxury,
+.property-card,
+.hover-list li {
+    -webkit-tap-highlight-color: transparent; /* quita el azul feo */
+}
